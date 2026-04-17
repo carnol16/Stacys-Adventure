@@ -30,8 +30,11 @@ class BattleDJ(threading.Thread):
         while self.running:
             clip = random.choice(self.clips)
             self.sm.play_music(clip)
-            # Sleep for slightly less than 5s to ensure continuous audio
-            time.sleep(4.9) 
+            # Sleep in small increments so thread exits quickly on stop()
+            for _ in range(49):
+                if not self.running:
+                    break
+                time.sleep(0.1)
 
     def stop(self):
         self.running = False
@@ -444,7 +447,7 @@ def enemyBattle(mainCharacter, fightNum, part):
 
     dj.stop()
     sm.fadeout_music(1000)
-    #dj.join()  # Wait for the audio thread to finish
+    dj.join()  # Wait for the audio thread to finish
     mainCharacter.health += 10
     mainCharacter.mana += 15
     fightNum += 1
@@ -559,6 +562,7 @@ def bossBattle(mainCharacter, fightNum, part):
     mainCharacter.mana += 15
     fightNum += 1
     dj.stop()
+    dj.join()
     sm.fadeout_music(1000)
     return fightNum
 
@@ -644,4 +648,4 @@ def npcGrab(mainCharacter):
     
     
     npcType.remove(npcPicked)
-            
+    

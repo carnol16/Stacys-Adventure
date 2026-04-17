@@ -1,12 +1,14 @@
 # openPicture_subprocess.py
-import tkinter as tk
-from PIL import Image, ImageTk
+# NOTE: tkinter imports are deferred to __main__ so this file is safe to
+# import/bundle without tkinter present (the pygame build never runs this
+# script directly — openPicture.openIMG is patched by pygame_terminal).
 import sys
 
-"""print("SUBPROCESS STARTED")
-print("Received path:", sys.argv[1])"""
 
 def openIMG(path):
+    import tkinter as tk
+    from PIL import Image, ImageTk
+
     root = tk.Tk()
     root.title("Current Location")
 
@@ -19,6 +21,7 @@ def openIMG(path):
     label.pack()
 
     root.mainloop()
+
 
 if __name__ == "__main__":
     openIMG(sys.argv[1])

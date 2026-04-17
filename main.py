@@ -11,7 +11,7 @@ atexit.register(pygame.quit)
 
 
 
-#mainCharacter = Player("boat man", "blue", "mommy" )
+mainCharacter = Player("boat man", "blue", "mommy" )
 #mainCharacter.activeParty = (NPC("Parim the Iguana", "blue"))
 
 mainCharacter = characterBuildIntro()      

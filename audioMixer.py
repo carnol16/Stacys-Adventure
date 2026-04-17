@@ -97,3 +97,12 @@ class SoundManager:
 '''sm = SoundManager()
 
 sm.print_loaded()'''
+
+# Shared singleton — import this instead of creating new SoundManager() instances
+_shared_sm = None
+
+def get_sound_manager():
+    global _shared_sm
+    if _shared_sm is None:
+        _shared_sm = SoundManager()
+    return _shared_sm

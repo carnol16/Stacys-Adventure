@@ -109,7 +109,17 @@ class Boss(Enemy):
             )
             self.drop = ("gold", "gold", "gold", "gold", "gold") + self.special
             
-        
+        if kind == "lolipop StealerMan":
+            self.health = 80 * (fightNum / 5)
+            self.damage = 5
+            self.defense = 2
+            self.flying = False
+            self.special = (
+                Special("BlowPop", "heal", False, True, 25, 5),
+                Special("Ring Pop Knuckles", "attack", True, False, 150, 45)
+            )
+            self.drop = ("gold", "gold", "gold", "gold", "gold") + self.special
+
         
         if kind == "STACY'S MOM":
             self.health = 300 * (fightNum / 5)

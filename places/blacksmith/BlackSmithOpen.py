@@ -1,6 +1,5 @@
 from classes.items import StoreItems
 from .Build import craftableItems, build
-import tkinter
 from PIL import Image
 import time
 from audioMixer import SoundManager
