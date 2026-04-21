@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# macOS
+.DS_Store
+
+# Archives & binaries
+*.zip
+*.app
+
+# Dev scratch
+ahhhh.txt
+CASESSSSS.txt
+colorTextRef.txt
+"dist copy/"
+"dist copy 2/"
