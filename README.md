@@ -34,7 +34,8 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 # Install dependencies
-pip install colorama pygame requests
+pip install -r requirements.txt
+
 
 # Run the game
 python main.py
