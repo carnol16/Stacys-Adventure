@@ -26,7 +26,7 @@ The game has animated typewriter-style dialogue, dynamic battle music, and color
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/StacysAdventure.git
+git clone https://github.com/carnol16/StacysAdventure.git
 cd StacysAdventure
 
 # Create a virtual environment
